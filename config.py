@@ -1,4 +1,4 @@
-bot_token = '7185375843:AAGcuwLwqoCf3Xue2AkxzRS8hX9sVEHOQXI' # Ваш токен бота
+bot_token = 'YOUR TOKEN' # Ваш токен бота
 max_sentences = 5  # сколько предложений у бота есть для ответа (иногда бот немного превышает этот лимит)
 max_tokens = 200  # сколько токенов у бота есть для ответа
 sys_con = 'You are a literature teacher who talks about various characters.'  #сообщение боту от системы

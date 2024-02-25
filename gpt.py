@@ -1,6 +1,6 @@
 import requests
 import logging as log
-from config import max_sentences, max_tokens, sys_con, temperature, model
+from config import max_sentences, max_tokens, sys_con, temperature
 from transformers import AutoTokenizer
 
 # log конфиг
@@ -10,9 +10,6 @@ log.basicConfig(
     filename="logbook.txt",
     format='%(asctime)s - %(levelname)s - %(message)s')
 
-# tokenizer = AutoTokenizer.from_pretrained(model)
-# def count_tokens(text):  # не получилось скачать tokenizer
-#     return len(tokenizer.encode(text))
 
 def get_resp(promt, prev_answer):
     resp = requests.post(  # POST запрос
@@ -36,7 +33,3 @@ def get_resp(promt, prev_answer):
     else:
         log.error(f"Ошибка: {resp.json()}")
         return "ERROR"
-
-
-#us_input = input("Введи промт")
-#print(get_resp(us_input, "Sherlock is a famed fictional detective created by Sir Arthur Conan Doyle, known for his intellectual brilliance and analytical skills"))

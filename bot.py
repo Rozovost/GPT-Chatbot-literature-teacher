@@ -56,7 +56,7 @@ def start(message):
     reg(message)
     bot.send_message(message.chat.id, f"Привет, {users_data[user_id]['name']}! Я GPT бот-помощник, "
                                       f"имитирующий учителя литературы!\n"
-                                      "Я могу рассказать вам о любом литературном герое.\n" # дополнить
+                                      "Я могу рассказать вам о любом литературном герое.\n"
                                       "Введите /help, чтобы получить список моих команд.\n",
                      reply_markup=start_keyboard)
     return
@@ -65,7 +65,7 @@ def start(message):
 # Прием и обработка промтов
 
 
-@bot.message_handler(commands=['solve_task'])
+@bot.message_handler(commands=['solve_task'])  # команда для ввода вопроса
 def solve_task_message(message):
     bot.send_message(message.chat.id, "Введите ваш вопрос.")
     bot.register_next_step_handler(message, get_promt)
